@@ -10948,15 +10948,33 @@ a.text-dark:focus {
   text-align: center;
 }
 
-strong {
+.counters strong {
   display: block;
   font-size: 2em;
 }
 
-.vote,
-.answer {
+.counters .vote,
+.counters .answer {
   width: 60px;
   height: 60px;
+}
+
+.counters .status.unanswered {
+  border: none;
+}
+
+.counters .status.answered {
+  border: 1px solid #38c172;
+  color: #38c172;
+}
+
+.counters .status.answered-accepted {
+  background-color: #38c172;
+  color: #fff;
+}
+
+.counters .view {
+  margin-top: 10px;
 }
 
 
