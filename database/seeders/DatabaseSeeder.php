@@ -4,8 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Question;
-//use App\Models\Answer;
-use App\Models\User;
+use App\Model\User;
 
 class DatabaseSeeder extends Seeder
 {
