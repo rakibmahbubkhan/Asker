@@ -25,7 +25,7 @@
 
                         </div>
                         <div class="status <?php echo e($question->status); ?>">
-                            <strong><?php echo e($question->answers); ?></strong> <?php echo e(Str::plural('answer', $question->answers)); ?>
+                            <strong><?php echo e($question->answers_count); ?></strong> <?php echo e(Str::plural('answer', $question->answers_count)); ?>
 
                         </div>
                         <div class="view">
