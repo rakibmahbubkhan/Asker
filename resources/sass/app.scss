@@ -4,6 +4,31 @@
 // Variables
 @import 'variables';
 
+//FontAwesome
+// $fa-font-path:        "../webfonts";
+// @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "~@fortawesome/fontawesome-free/scss/solid.scss";
+// @import "~@fortawesome/fontawesome-free/scss/regular.scss";
+// @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// .user {
+//     @extend %fa-icon;
+//     @extend .fas;
+  
+//     &:before {
+//       content: fa-content($fa-var-user);
+//     }
+//   }
+  
+//   .twitter {
+//     @extend %fa-icon;
+//     @extend .fab;
+  
+//     &:before {
+//       content: fa-content($fa-var-twitter);
+//     }
+//   }
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -41,4 +66,44 @@
 
 form.form-delete{
     display: inline;
+}
+
+.vote-controls{
+    min-width: 60px;
+    margin-right: 10px;
+    text-align: center;
+    color: $gray-700;
+
+    span,a {
+        display: block;
+    }
+    span {
+        &.votes-count{
+            font-size: 25px;
+        }
+        &.favourites-count{
+            font-size: 12px;
+        }
+    }
+
+    a {
+        cursor: pointer;
+        color: $gray-600;
+
+        &.off, &.off:hover{
+            color: $gray-500;
+        }
+
+        &.favourite{
+            &.favourited, &.favourited:hover{
+                color: $warning;
+            }
+        }
+        &.vote-accepted, &.vote-accepted:hover{
+            color: $green;
+        }
+
+        
+    }
+    
 }

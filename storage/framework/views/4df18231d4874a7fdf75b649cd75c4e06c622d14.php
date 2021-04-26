@@ -19,15 +19,15 @@
                 <div class="media">
                 <div class="d-flex flex-column vote-controls">
                     <a title="This Question is useful" class="vote-up" href=""><i class="fas fa-caret-up fa-3x"></i></a>
-                    <span class="vote-count">1280</span>
+                    <span class="votes-count">1280</span>
                     <a title="This Question is not useful" class="vote-down off" href=""><i class="fas fa-caret-down fa-3x"></i></a>
-                    <a title="Click to mark as favourite question(click again to undo)" class="favourite" href="">
-                    <i class="fas fa-star fa-3x"></i>
+                    <a title="Click to mark as favourite question(click again to undo)" class="favourite mt-2 favourited" href="">
+                    <i class="fas fa-star fa-2x"></i>
                     <span class="favourites-count">123</span>
                     </a>
-
-
                 </div>
+
+
                    <div class="media-body">
                    <?php echo $question->body_html; ?>
 
@@ -44,6 +44,7 @@
                   </div>
                    </div>
                 </div>
+
             </div>
                 
             </div>
@@ -59,24 +60,32 @@
                     </div><hr>
                     <?php $__currentLoopData = $question->answers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $answer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="media">
-                        <div class="media-body">
-                            
-                            <?php echo $answer->body_html; ?>
+                        <div class="d-flex flex-column vote-controls">
+                        <a title="This Answer is useful" class="vote-up" href=""><i class="fas fa-caret-up fa-3x"></i></a>
+                        <span class="votes-count">1280</span>
+                        <a title="This Answer is not useful" class="vote-down off" href=""><i class="fas fa-caret-down fa-3x"></i></a>
+                        <a title="Mark this answer as best answer" class="vote-accepted mt-2 favourited" href="">
+                        <i class="fas fa-check fa-2x"></i>
+                        <span class="favourites-count">123</span>
+                        </a>
+                        </div>
+                    <div class="media-body">
+                        <?php echo $answer->body_html; ?>
 
-                            <div class="float-right">
-                                <span class="text-muted">Answered <?php echo e($answer->created_date); ?></span>
-                                <div class="media mt-2">
-                                    <a href="<?php echo e($answer->user->url); ?>" class="pr-2">
-                                    <img src="<?php echo e($answer->user->avater); ?>" alt="">
-                                    </a>
-                                    <div class="media-body mt-1">
-                                        <a href="<?php echo e($answer->user->url); ?>"><?php echo e($answer->user->name); ?></a>
-                                    </div>
+                        <div class="float-right">
+                            <span class="text-muted">Answered <?php echo e($answer->created_date); ?></span>
+                            <div class="media mt-2">
+                                <a href="<?php echo e($answer->user->url); ?>" class="pr-2">
+                                <img src="<?php echo e($answer->user->avater); ?>" alt="">
+                                </a>
+                                <div class="media-body mt-1">
+                                    <a href="<?php echo e($answer->user->url); ?>"><?php echo e($answer->user->name); ?></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <hr>
+                </div>
+                <hr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
