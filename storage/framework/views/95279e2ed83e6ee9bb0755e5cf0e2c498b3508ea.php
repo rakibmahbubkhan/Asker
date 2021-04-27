@@ -5,6 +5,7 @@
                     <div class="card-title">
                         <h2><?php echo e($answersCount." ". Str::plural('Answer', $answersCount)); ?></h2>
                     </div><hr>
+                    <?php echo $__env->make('layouts._messages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php $__currentLoopData = $answers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $answer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="media">
                         <div class="d-flex flex-column vote-controls">

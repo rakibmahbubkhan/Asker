@@ -5,6 +5,7 @@
                     <div class="card-title">
                         <h2>{{ $answersCount." ". Str::plural('Answer', $answersCount) }}</h2>
                     </div><hr>
+                    @include('layouts._messages')
                     @foreach($answers as $answer)
                     <div class="media">
                         <div class="d-flex flex-column vote-controls">
