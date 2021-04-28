@@ -12,7 +12,7 @@
                         <a title="This Answer is useful" class="vote-up" href=""><i class="fas fa-caret-up fa-3x"></i></a>
                         <span class="votes-count">1280</span>
                         <a title="This Answer is not useful" class="vote-down off" href=""><i class="fas fa-caret-down fa-3x"></i></a>
-                        <a title="Mark this answer as best answer" class="vote-accepted mt-2 favourited" href="">
+                        <a title="Mark this answer as best answer" class="<?php echo e($answer->status); ?> mt-2 favourited" href=""> 
                         <i class="fas fa-check fa-2x"></i>
                         <span class="favourites-count">123</span>
                         </a>

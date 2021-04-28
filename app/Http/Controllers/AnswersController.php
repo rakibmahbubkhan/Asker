@@ -65,6 +65,7 @@ class AnswersController extends Controller
         $this->authorize('delete', $answer);
 
         $answer->delete();
-        return back()->with('success', 'Your answer has been deleted successfully');
+
+        return back()->with('success', "Your answer has been removed");
     }
 }
