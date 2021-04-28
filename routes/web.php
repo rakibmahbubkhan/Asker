@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AnswersController;
+use App\Http\Controllers\AcceptAnswerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,4 @@ Route::resource('questions',QuestionsController::class)->except('show');
 Route::resource('questions.answers',AnswersController::class)->except(['index', 'create', 'show']);
 
 Route::get('/questions/{slug}', [QuestionsController::class, 'show'])->name('questions.show');
+Route::post('/answers/{answer}/accept', AcceptAnswerController::class)->name('answers.accept');
