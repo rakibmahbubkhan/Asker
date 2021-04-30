@@ -11,15 +11,26 @@
                     <div class="d-flex flex-column vote-controls">
                     <a title="This Answer is useful" class="vote-up" href=""><i class="fas fa-caret-up fa-3x"></i></a>
                     <span class="votes-count">1280</span>
-                    <a title="This Answer is not useful" class="vote-down off" href=""><i class="fas fa-caret-down fa-3x"></i></a>
-                    <a title="Mark this answer as best answer" class="<?php echo e($answer->status); ?> mt-2 favourited" href="" 
+                    <a title="This Answer is not useful" class="vote-down off" href="">
+                        <i class="fas fa-caret-down fa-3x"></i>
+                    </a>
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('accept', $answer)): ?>
+                    <a title="Mark this answer as best answer" class="<?php echo e($answer->status); ?> mt-2" href="" 
                     onclick="event.preventDefault(); document.getElementById('accept-answer-<?php echo e($answer->id); ?>').submit();"> 
-                    <i class="fas fa-check fa-2x"></i>
-                    <span class="favourites-count">123</span>
+                        <i class="fas fa-check fa-2x"></i>
+                        <span class="favourites-count">123</span>
                     </a>
                     <form id="accept-answer-<?php echo e($answer->id); ?>" action="<?php echo e(route('answers.accept', $answer->id)); ?>" method="POST" style="display: none;">
                         <?php echo csrf_field(); ?>
                     </form>
+                <?php else: ?>
+                    <?php if($answer->is_best): ?>
+                    <a title="The question owner accepted this answer as best answer" class="<?php echo e($answer->status); ?> mt-2" href=""> 
+                        <i class="fas fa-check fa-2x"></i>
+                        <span class="favourites-count">123</span>
+                    </a>
+                    <?php endif; ?>
+                    <?php endif; ?>
                     </div>
                 <div class="media-body">
                     <?php echo $answer->body_html; ?>

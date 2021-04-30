@@ -5,6 +5,7 @@ use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AnswersController;
 use App\Http\Controllers\AcceptAnswerController;
+use App\Http\Controllers\FavouritesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,5 @@ Route::resource('questions.answers',AnswersController::class)->except(['index', 
 
 Route::get('/questions/{slug}', [QuestionsController::class, 'show'])->name('questions.show');
 Route::post('/answers/{answer}/accept', AcceptAnswerController::class)->name('answers.accept');
+Route::post('/questions/{question}/favourites', [FavouritesController::class, 'store'])->name('questions.favourite');
+Route::post('/questions/{question}/favourites', [FavouritesController::class, 'destroy'])->name('questions.unfavourite');
