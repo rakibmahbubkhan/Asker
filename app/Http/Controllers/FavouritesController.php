@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Question;
 
 class FavouritesController extends Controller
 {
@@ -13,14 +15,15 @@ class FavouritesController extends Controller
     
     public function store(Question $question)
     {
-        $question->favourites()->attach(auth()->id());
+        $question->favourites()->attach(Auth::user()->id);
 
         return back();
     }
 
     public function destroy(Question $question)
     {
-        $question->favourites()->detach(auth()->id());
+        $question->favourites()->detach(Auth::user()->id);
 
         return back();
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class Question extends Model
@@ -72,16 +73,16 @@ class Question extends Model
 
     public function isFavourited()
     {
-        return $this->favourites()->where('user_id', auth()->id())->count() > 0;
+        return $this->favourites()->where('user_id', Auth::id())->count() > 0;
     }
 
-    public function getIsFavouritedAttribute(Type $var = null)
+    public function getIsFavouritedAttribute()
     {
         return $this->isFavourited();
     }
 
-    public function getFavouritesCountAttribute(Type $var = null)
+    public function getFavouritesCountAttribute()
     {
-        return $this->favourites->count();
+        return $this->favourites()->count();
     }
 }

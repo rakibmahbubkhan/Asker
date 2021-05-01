@@ -16,10 +16,13 @@ class FavouritesTableSeeder extends Seeder
     public function run()
     {
         \DB::table('favourites')->delete();
+
         $users = User::pluck('id')->all();
         $numberOfUsers = count($users);
+
         foreach (Question::all() as $question) {
-            for ($i=0; $i < rand(1, $numberOfUsers); $i++) { 
+            for ($i=0; $i < rand(1, $numberOfUsers); $i++)
+            { 
                 $user = $users[$i];
                 $question->favourites()->attach($user);
             }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use illuminate\Support\Facades\Auth;
 use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class AnswersController extends Controller
         
         $question->answers()->create($request->validate([
             'body' => 'required'
-        ]) + ['user_id' => \Auth::id()]);
+        ]) + ['user_id' => Auth::user()->id]);
 
         return back()->with('success', ' Your answer has been submitted successfully');
     }
