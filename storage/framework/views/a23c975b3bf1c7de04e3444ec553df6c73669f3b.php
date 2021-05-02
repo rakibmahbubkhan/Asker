@@ -21,7 +21,7 @@
                    <div class="media">
                    <div class="d-flex flex-column counters">
                         <div class="vote">
-                            <strong><?php echo e($question->votes); ?></strong> <?php echo e(Str::plural('vote', $question->votes)); ?>
+                            <strong><?php echo e($question->votes_count); ?></strong> <?php echo e(Str::plural('vote', $question->votes_count)); ?>
 
                         </div>
                         <div class="status <?php echo e($question->status); ?>">
