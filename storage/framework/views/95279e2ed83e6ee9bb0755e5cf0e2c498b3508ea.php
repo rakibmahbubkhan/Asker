@@ -9,11 +9,31 @@
                 <?php $__currentLoopData = $answers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $answer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="media">
                     <div class="d-flex flex-column vote-controls">
-                    <a title="This Answer is useful" class="vote-up" href=""><i class="fas fa-caret-up fa-3x"></i></a>
-                    <span class="votes-count">1280</span>
-                    <a title="This Answer is not useful" class="vote-down off" href="">
-                        <i class="fas fa-caret-down fa-3x"></i>
-                    </a>
+                    
+                    <a title="This answer is useful" 
+                                class="vote-up <?php echo e(Auth::guest() ? 'off' : ''); ?>"
+                                onclick="event.preventDefault(); document.getElementById('up-vote-answer-<?php echo e($answer->id); ?>').submit();"
+                                >
+                                <i class="fas fa-caret-up fa-3x"></i>
+                            </a>
+                            <form id="up-vote-answer-<?php echo e($answer->id); ?>" action="\answers/<?php echo e($answer->id); ?>/vote" method="POST" style="display:none;">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="vote" value="1">
+                            </form>
+
+                            <span class="votes-count"><?php echo e($answer->votes_count); ?></span>
+
+                            <a title="This answer is not useful" 
+                                class="vote-down <?php echo e(Auth::guest() ? 'off' : ''); ?>"
+                                onclick="event.preventDefault(); document.getElementById('down-vote-answer-<?php echo e($answer->id); ?>').submit();"
+                                >
+                                <i class="fas fa-caret-down fa-3x"></i>
+                            </a>
+                            <form id="down-vote-answer-<?php echo e($answer->id); ?>" action="\answers/<?php echo e($answer->id); ?>/vote" method="POST" style="display:none;">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="vote" value="-1">
+                            </form>
+
                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('accept', $answer)): ?>
                     <a title="Mark this answer as best answer" class="<?php echo e($answer->status); ?> mt-2" href="" 
                     onclick="event.preventDefault(); document.getElementById('accept-answer-<?php echo e($answer->id); ?>').submit();"> 
