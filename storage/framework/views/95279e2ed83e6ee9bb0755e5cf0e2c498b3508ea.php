@@ -34,23 +34,7 @@
                                 <input type="hidden" name="vote" value="-1">
                             </form>
 
-                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('accept', $answer)): ?>
-                    <a title="Mark this answer as best answer" class="<?php echo e($answer->status); ?> mt-2" href="" 
-                    onclick="event.preventDefault(); document.getElementById('accept-answer-<?php echo e($answer->id); ?>').submit();"> 
-                        <i class="fas fa-check fa-2x"></i>
-                        <span class="favourites-count">123</span>
-                    </a>
-                    <form id="accept-answer-<?php echo e($answer->id); ?>" action="<?php echo e(route('answers.accept', $answer->id)); ?>" method="POST" style="display: none;">
-                        <?php echo csrf_field(); ?>
-                    </form>
-                <?php else: ?>
-                    <?php if($answer->is_best): ?>
-                    <a title="The question owner accepted this answer as best answer" class="<?php echo e($answer->status); ?> mt-2" href=""> 
-                        <i class="fas fa-check fa-2x"></i>
-                        <span class="favourites-count">123</span>
-                    </a>
-                    <?php endif; ?>
-                    <?php endif; ?>
+                    
                     </div>
                 <div class="media-body">
                     <?php echo $answer->body_html; ?>
@@ -72,17 +56,12 @@
                     </div>
                     <div class="col-4"></div>
                     <div class="col-4">
-                        <div class="float-right">
-                            <span class="text-muted">Answered <?php echo e($answer->created_date); ?></span>
-                            <div class="media mt-2">
-                                <a href="<?php echo e($answer->user->url); ?>" class="pr-2">
-                                <img src="<?php echo e($answer->user->avater); ?>" alt="">
-                                </a>
-                                <div class="media-body mt-1">
-                                    <a href="<?php echo e($answer->user->url); ?>"><?php echo e($answer->user->name); ?></a>
-                                </div>
-                            </div>
-                        </div>
+                    
+                        <?php echo $__env->make('shared._author', [
+                        'model' => $answer,
+                        'label' => 'answered'
+                        ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        
                     </div>
                     </div>
                     
