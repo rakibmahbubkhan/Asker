@@ -16,7 +16,7 @@
                                 >
                                 <i class="fas fa-caret-up fa-3x"></i>
                             </a>
-                            <form id="up-vote-answer-{{ $answer->id }}" action="/answers/{{ $answer->id }}/vote" method="POST" style="display:none;">
+                            <form id="up-vote-answer-{{ $answer->id }}" action="../answers/{{ $answer->id }}/vote" method="POST" style="display:none;">
                                 @csrf
                                 <input type="hidden" name="vote" value="1">
                             </form>
@@ -29,7 +29,7 @@
                                 >
                                 <i class="fas fa-caret-down fa-3x"></i>
                             </a>
-                            <form id="down-vote-answer-{{ $answer->id }}" action="/answers/{{ $answer->id }}/vote" method="POST" style="display:none;">
+                            <form id="down-vote-answer-{{ $answer->id }}" action="../answers/{{ $answer->id }}/vote" method="POST" style="display:none;">
                                 @csrf
                                 <input type="hidden" name="vote" value="-1">
                             </form>

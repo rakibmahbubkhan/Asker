@@ -11,6 +11,7 @@ use App\Models\User;
 class Question extends Model
 {
     use HasFactory;
+    use VotableTrait;
 
     protected $fillable = [
             'title',
@@ -86,18 +87,5 @@ class Question extends Model
         return $this->favourites->count();
     }
 
-    public function votes()
-    {
-        return $this->morphToMany(User::class, 'votable');
-    }
-
-    public function upVotes()
-    {
-        return $this->votes()->wherePivot('vote', 1);
-    }
-
-    public function downVotes()
-    {
-        return $this->votes()->wherePivot('vote', -1);
-    }
+    
 }
