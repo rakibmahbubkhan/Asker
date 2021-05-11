@@ -55,8 +55,7 @@
                             <a href="<?php echo e($question->user->url); ?>"><?php echo e($question->user->name); ?></a>
                             <small class="text-muted"><?php echo e($question->created_Date); ?></small>
                             </p>
-                           <?php echo e(Str::limit($question->body, 250)); ?>
-
+                           <div class="excerpt"><?php echo e($question->excerpt(300)); ?></div>
                         </div>
                    </div>
                    <hr>

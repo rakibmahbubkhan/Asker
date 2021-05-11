@@ -56,6 +56,17 @@
       0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
+  'mews/purifier' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Mews\\Purifier\\PurifierServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Purifier' => 'Mews\\Purifier\\Facades\\Purifier',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
