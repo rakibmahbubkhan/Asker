@@ -11,7 +11,7 @@ onclick="event.preventDefault(); document.getElementById('accept-answer-{{ $mode
 @if($model->is_best)
 <a title="The question owner accepted this answer as best answer" class="{{ $model->status }} mt-2" href=""> 
 <i class="fas fa-check fa-2x"></i>
-<span class="favourites-count">123</span>
+<!-- <span class="favourites-count">123</span> -->
 </a>
 @endif
 @endcan

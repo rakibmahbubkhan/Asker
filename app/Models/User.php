@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $appends = [
+        'url',
+        'avater'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *

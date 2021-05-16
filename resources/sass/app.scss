@@ -107,3 +107,11 @@ form.form-delete{
     }
     
 }
+
+.post{
+    padding: 20px 0;
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+
+    }
+}

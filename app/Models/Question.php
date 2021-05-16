@@ -17,6 +17,10 @@ class Question extends Model
             'title',
             'body'
     ];
+
+    protected $appends = [
+        'created_date'
+    ];
     
     public function user(){
         return $this->belongsTo(User::class);
@@ -56,7 +60,7 @@ class Question extends Model
     
     public function answers()
     {
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class)->orderBy('votes_count', 'DESC');
         //$question->answers->count();
         //foreach($question->answers as answer);
     }

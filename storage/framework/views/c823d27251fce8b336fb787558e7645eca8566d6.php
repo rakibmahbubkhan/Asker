@@ -1,6 +1,6 @@
 <?php if($paginator->hasPages()): ?>
     <nav>
-        <ul class="pagination justify-content-center">
+        <ul class="pagination justify-content-center mt-4">
             
             <?php if($paginator->onFirstPage()): ?>
                 <li class="page-item disabled" aria-disabled="true" aria-label="<?php echo app('translator')->get('pagination.previous'); ?>">

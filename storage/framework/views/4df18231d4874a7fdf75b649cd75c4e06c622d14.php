@@ -26,14 +26,11 @@
                    <?php echo $question->body_html; ?>
 
                    <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <?php echo $__env->make('shared._author', [
-                        'model' => $question,
-                        'label' => 'Asked by'
-                        ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    </div>
+                        <div class="col-4"></div>
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <user-info :model="<?php echo e($question); ?>" label="Asked"></user-info>
+                        </div>
                    </div>
                    
                    </div>
