@@ -11,8 +11,8 @@
 @endif
 
 @php
-$formId = '$name ."-". $model->id';
-$formAction = "{$model->id}/vote";
+    $formId = $name . "-" . $model->id;
+    $formAction = "../{$firstURISegment}/{$model->id}/vote";
 @endphp
 
 <div class="d-flex flex-column vote-controls">

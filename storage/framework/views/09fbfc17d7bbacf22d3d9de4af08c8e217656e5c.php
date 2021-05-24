@@ -2,7 +2,7 @@
 <a title="Mark this answer as best answer" class="<?php echo e($model->status); ?> mt-2" href="" 
 onclick="event.preventDefault(); document.getElementById('accept-answer-<?php echo e($model->id); ?>').submit();"> 
 <i class="fas fa-check fa-2x"></i>
-<span class="favourites-count">123</span>
+<!-- <span class="favourites-count">123</span> -->
 </a>
 <form id="accept-answer-<?php echo e($model->id); ?>" action="<?php echo e(route('answers.accept', $model->id)); ?>" method="POST" style="display: none;">
 <?php echo csrf_field(); ?>

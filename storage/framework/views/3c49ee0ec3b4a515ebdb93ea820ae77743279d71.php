@@ -11,8 +11,8 @@
 <?php endif; ?>
 
 <?php
-$formId = '$name ."-". $model->id';
-$formAction = "{$model->id}/vote";
+    $formId = $name . "-" . $model->id;
+    $formAction = "../{$firstURISegment}/{$model->id}/vote";
 ?>
 
 <div class="d-flex flex-column vote-controls">

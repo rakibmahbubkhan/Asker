@@ -2,7 +2,7 @@
 <a title="Mark this answer as best answer" class="{{ $model->status }} mt-2" href="" 
 onclick="event.preventDefault(); document.getElementById('accept-answer-{{ $model->id }}').submit();"> 
 <i class="fas fa-check fa-2x"></i>
-<span class="favourites-count">123</span>
+<!-- <span class="favourites-count">123</span> -->
 </a>
 <form id="accept-answer-{{ $model->id }}" action="{{ route('answers.accept', $model->id) }}" method="POST" style="display: none;">
 @csrf
