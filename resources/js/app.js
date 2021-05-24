@@ -11,6 +11,7 @@ window.Vue = require('vue').default;
 
 import VueIziToast from 'vue-izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import Vue from 'vue';
 Vue.use(VueIziToast);
 
 /**
@@ -27,6 +28,7 @@ Vue.use(VueIziToast);
 
 Vue.component('user-info', require('./components/UserInfo.vue').default);
 Vue.component('answer', require('./components/Answer.vue').default);
+Vue.component('favourite', require('./components/Favourite.vue').default);
 
 
 

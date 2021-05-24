@@ -9,9 +9,6 @@
 
     <title>Ask a question</title>
 
-    <!-- Scripts -->
-    <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -84,6 +81,16 @@
             <?php echo $__env->yieldContent('content'); ?>
         </main>
     </div>
+
+        <!-- Scripts -->
+        <script>
+            window.Auth = <?php echo json_encode([
+                'signedIn' => Auth::check(),
+                'user' => Auth::user()
+            ]); ?>
+
+        </script>
+        <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\Laravel-Q-A\resources\views/layouts/app.blade.php ENDPATH**/ ?>

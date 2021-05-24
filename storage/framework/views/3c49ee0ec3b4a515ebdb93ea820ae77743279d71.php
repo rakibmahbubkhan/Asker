@@ -35,9 +35,7 @@
     </form>
 
 <?php if($model instanceof App\Models\Question): ?>
-    <?php echo $__env->make('shared._favourite', [
-    'model' => $model
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <favourite :question="<?php echo e($model); ?>"></favourite>
 <?php elseif($model instanceof App\Models\Answer): ?>
     <?php echo $__env->make('shared._accept', [
     'model' => $model

@@ -17,6 +17,9 @@ class FavouritesController extends Controller
     {
         $question->favourites()->attach(Auth::user()->id);
 
+        if (request()->expectsJson()) {
+            return response()->json(null, 204);
+        }
         return back();
     }
 
@@ -24,6 +27,9 @@ class FavouritesController extends Controller
     {
         $question->favourites()->detach(Auth::user()->id);
 
+        if (request()->expectsJson()) {
+            return response()->json(null, 204);
+        }
         return back();
     }
 }
