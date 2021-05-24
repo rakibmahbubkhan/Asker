@@ -50,11 +50,11 @@
                                 <a @click.prevent="edit" class="btn btn-sm btn-outline-info">Edit</a>
                             <?php endif; ?>
                             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('delete', $answer)): ?>
-                                <form class="form-delete" action="<?php echo e(route('questions.answers.destroy', [$question->id, $answer->id])); ?>" method="POST">
+                                <!-- <form class="form-delete" action="<?php echo e(route('questions.answers.destroy', [$question->id, $answer->id])); ?>" method="POST">
                                 <?php echo method_field('DELETE'); ?>
-                                <?php echo csrf_field(); ?>
-                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
+                                <?php echo csrf_field(); ?>                               
+                                </form> -->
+                                <button class="btn btn-sm btn-outline-danger" @click="destroy">Delete</button>
                             <?php endif; ?>
                             </div>
                     </div>
