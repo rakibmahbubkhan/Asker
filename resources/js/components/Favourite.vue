@@ -29,10 +29,6 @@ export default {
 
         endpoint() {
             return `${this.id}/favourites`;
-        },
-
-        signedIn() {
-            return window.Auth.signedIn;
         }
     },
     methods: {
