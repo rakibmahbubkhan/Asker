@@ -37,8 +37,6 @@
 <?php if($model instanceof App\Models\Question): ?>
     <favourite :question="<?php echo e($model); ?>"></favourite>
 <?php elseif($model instanceof App\Models\Answer): ?>
-    <?php echo $__env->make('shared._accept', [
-    'model' => $model
-    ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <accept :answer="<?php echo e($model); ?>"></accept>
 <?php endif; ?>
 </div><?php /**PATH C:\xampp\htdocs\Laravel-Q-A\resources\views/shared/_vote.blade.php ENDPATH**/ ?>

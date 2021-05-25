@@ -14,7 +14,8 @@ class Answer extends Model
     protected $fillable = ['body', 'user_id'];
     protected $appends = [
         'created_date',
-        'body_html'
+        'body_html',
+        'is_best'
     ];
 
     public function question()
@@ -56,7 +57,7 @@ class Answer extends Model
         return $this->isBest() ? 'vote-accepted' : '';
     }
 
-    public function getIsBest()
+    public function getIsBestAttribute()
     {
         return $this->isBest();
     }
