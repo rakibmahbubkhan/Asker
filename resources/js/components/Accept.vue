@@ -52,7 +52,7 @@ export default {
         classes() {
             return [
                 'mt-2',
-                this.accepted ? 'vote-accepted' : ''
+                this.isBest ? 'vote-accepted' : ''
             ]
         }
     }

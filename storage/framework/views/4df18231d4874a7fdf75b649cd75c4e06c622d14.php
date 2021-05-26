@@ -17,9 +17,10 @@
                 <hr>
 
                 <div class="media">
-                <?php echo $__env->make('shared._vote', [
+                <!-- <?php echo $__env->make('shared._vote', [
                 'model' => $question
-                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> -->
+                <vote :model="<?php echo e($question); ?>" name="question"></vote>
 
 
                    <div class="media-body">

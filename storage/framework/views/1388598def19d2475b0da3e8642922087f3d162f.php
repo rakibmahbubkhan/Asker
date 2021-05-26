@@ -1,7 +1,9 @@
 <answer :answer="<?php echo e($answer); ?>" inline-template>
     <div class="media post">
 
-        <?php echo $__env->make('shared._vote', ['model' => $answer], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        <!-- <?php echo $__env->make('shared._vote', ['model' => $answer], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> -->
+
+        <vote :model="<?php echo e($answer); ?>" name="answer"></vote>
 
         <!-- <div class="d-flex flex-column vote-controls">
         
