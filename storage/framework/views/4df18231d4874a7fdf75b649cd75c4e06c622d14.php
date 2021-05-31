@@ -42,10 +42,8 @@
             </div>
         </div>
     </div>
-    <?php echo $__env->make('answers._index', [
-        'answers' => $question->answers,
-        'answersCount' => $question->answers_count,
-        ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
+    <answers :answers="<?php echo e($question->answers); ?>" :count="<?php echo e($question->answers_count); ?>"></answers>
 
     <?php echo $__env->make('answers._create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
