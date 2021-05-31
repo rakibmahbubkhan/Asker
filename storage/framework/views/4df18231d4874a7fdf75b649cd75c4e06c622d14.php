@@ -43,7 +43,8 @@
         </div>
     </div>
     
-    <answers :answers="<?php echo e($question->answers); ?>" :count="<?php echo e($question->answers_count); ?>"></answers>
+    <!-- <answers :answers="<?php echo e($question->answers); ?>" :count="<?php echo e($question->answers_count); ?>"></answers> -->
+    <answers :question="<?php echo e($question); ?>"></answers>
 
     <?php echo $__env->make('answers._create', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
