@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import  Answer from './Answer.vue';
+import Answer from './Answer.vue';
 import NewAnswer from './NewAnswer.vue';
 
 
