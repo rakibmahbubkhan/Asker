@@ -10942,6 +10942,10 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  background-image: linear-gradient(yellow, #f9f9a7);
+}
+
 .counters {
   margin-right: 30px;
   font-size: 10px;
