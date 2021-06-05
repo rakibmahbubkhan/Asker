@@ -33,11 +33,32 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar{
-    background-image: linear-gradient(yellow, #f9f9a7);
+    background-color: #ffffff !important;
 }
-.green-text{
-    color: #716d61;
+h2,h3,a,p{
+    color: #ffffff;
 }
+
+a:hover{
+    text-decoration: none;
+}
+
+.excerpt{
+    color: #c0cad4;
+}
+
+.card{
+    background-color: #323567;
+}
+
+label .card-header, .card-body, #app{
+    background-color: #232546;
+    color: #c0cad4;
+}
+.card-header{
+    background-color: #474866;
+}
+
 
 .counters{
     margin-right: 30px;
@@ -51,6 +72,7 @@
     .vote, .answer{
         width: 60px;
         height: 60px;
+        color: #c0cad4;
     }
     .status{
         &.unanswered{
@@ -68,6 +90,7 @@
 
     .view{
         margin-top: 10px;
+        color: #c0cad4;
     }
 }
 
@@ -79,7 +102,7 @@ form.form-delete{
     min-width: 60px;
     margin-right: 10px;
     text-align: center;
-    color: $gray-700;
+    color: #ffffff;
 
     span,a {
         display: block;
@@ -95,7 +118,7 @@ form.form-delete{
 
     a {
         cursor: pointer;
-        color: $gray-600;
+        color: #ffffff;
 
         &.off, &.off:hover{
             color: $gray-500;
@@ -107,7 +130,7 @@ form.form-delete{
             }
         }
         &.vote-accepted, &.vote-accepted:hover{
-            color: $green;
+            color: #2d9cca;
         }
 
         
@@ -118,7 +141,7 @@ form.form-delete{
 .post{
     padding: 20px 0;
     &:not(:last-child) {
-        border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+        border-bottom: 1px solid rgba($color: #fffdfd, $alpha: .1);
 
     }
 }

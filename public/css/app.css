@@ -10943,11 +10943,37 @@ a.text-dark:focus {
 }
 
 .navbar {
-  background-image: linear-gradient(yellow, #f9f9a7);
+  background-color: #ffffff !important;
 }
 
-.green-text {
-  color: #716d61;
+h2,
+h3,
+a,
+p {
+  color: #ffffff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.excerpt {
+  color: #c0cad4;
+}
+
+.card {
+  background-color: #323567;
+}
+
+label .card-header,
+.card-body,
+#app {
+  background-color: #232546;
+  color: #c0cad4;
+}
+
+.card-header {
+  background-color: #474866;
 }
 
 .counters {
@@ -10965,6 +10991,7 @@ a.text-dark:focus {
 .counters .answer {
   width: 60px;
   height: 60px;
+  color: #c0cad4;
 }
 
 .counters .status.unanswered {
@@ -10983,6 +11010,7 @@ a.text-dark:focus {
 
 .counters .view {
   margin-top: 10px;
+  color: #c0cad4;
 }
 
 form.form-delete {
@@ -10993,7 +11021,7 @@ form.form-delete {
   min-width: 60px;
   margin-right: 10px;
   text-align: center;
-  color: #495057;
+  color: #ffffff;
 }
 
 .vote-controls span,
@@ -11011,7 +11039,7 @@ form.form-delete {
 
 .vote-controls a {
   cursor: pointer;
-  color: #6c757d;
+  color: #ffffff;
 }
 
 .vote-controls a.off,
@@ -11026,7 +11054,7 @@ form.form-delete {
 
 .vote-controls a.vote-accepted,
 .vote-controls a.vote-accepted:hover {
-  color: #38c172;
+  color: #2d9cca;
 }
 
 .post {
@@ -11034,7 +11062,7 @@ form.form-delete {
 }
 
 .post:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 253, 253, 0.1);
 }
 
 [v-cloak] {

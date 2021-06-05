@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center">
                         <h2>Edit Questions</h2>
                         <div class="ml-auto">
-                            <a href="<?php echo e(route( 'questions.index')); ?>" class="btn btn-outline-secondary">back to all questions</a>
+                            <a href="<?php echo e(route( 'questions.index')); ?>" class="btn btn-outline-danger">back to all questions</a>
                         </div>
                     </div>
                 </div>
