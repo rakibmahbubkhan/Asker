@@ -1,4 +1,6 @@
 <answer :answer="{{ $answer }}" inline-template>
+<a title="Mark this answer as best answer" class="{{ $model->status }} mt-2" href="" 
+onclick="event.preventDefault(); document.getElementById('accept-answer-{{ $model->id }}').submit();">
     <div class="media post">
 
         <!-- @include('shared._vote', ['model' => $answer]) -->
@@ -70,4 +72,5 @@
             </div>
         </div>
     </div>
+    </a>
 </answer>
