@@ -2194,7 +2194,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Vote_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Vote.vue */ "./resources/js/components/Vote.vue");
 /* harmony import */ var _UserInfo_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserInfo.vue */ "./resources/js/components/UserInfo.vue");
-/* harmony import */ var _mixins_modification_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mixins/modification.js */ "./resources/js/mixins/modification.js");
+/* harmony import */ var _MEditor_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MEditor.vue */ "./resources/js/components/MEditor.vue");
+/* harmony import */ var _mixins_modification_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mixins/modification.js */ "./resources/js/mixins/modification.js");
 //
 //
 //
@@ -2231,15 +2232,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["answer"],
-  mixins: [_mixins_modification_js__WEBPACK_IMPORTED_MODULE_2__.default],
+  mixins: [_mixins_modification_js__WEBPACK_IMPORTED_MODULE_3__.default],
   components: {
     Vote: _Vote_vue__WEBPACK_IMPORTED_MODULE_0__.default,
-    UserInfo: _UserInfo_vue__WEBPACK_IMPORTED_MODULE_1__.default
+    UserInfo: _UserInfo_vue__WEBPACK_IMPORTED_MODULE_1__.default,
+    MEditor: _MEditor_vue__WEBPACK_IMPORTED_MODULE_2__.default
   },
   data: function data() {
     return {
@@ -2593,8 +2598,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserInfo_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserInfo.vue */ "./resources/js/components/UserInfo.vue");
 /* harmony import */ var _MEditor_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MEditor.vue */ "./resources/js/components/MEditor.vue");
 /* harmony import */ var _mixins_modification_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mixins/modification.js */ "./resources/js/mixins/modification.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -2668,11 +2671,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['question'],
   mixins: [_mixins_modification_js__WEBPACK_IMPORTED_MODULE_3__.default],
-  components: _defineProperty({
+  components: {
     Vote: _Vote_vue__WEBPACK_IMPORTED_MODULE_0__.default,
     UserInfo: _UserInfo_vue__WEBPACK_IMPORTED_MODULE_1__.default,
     MEditor: _MEditor_vue__WEBPACK_IMPORTED_MODULE_2__.default
-  }, "MEditor", _MEditor_vue__WEBPACK_IMPORTED_MODULE_2__.default),
+  },
   data: function data() {
     return {
       title: this.question.title,
@@ -48495,29 +48498,36 @@ var render = function() {
                 }
               },
               [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.body,
-                        expression: "body"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { rows: "10", required: "" },
-                    domProps: { value: _vm.body },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("m-editor", { attrs: { body: _vm.body } }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.body,
+                            expression: "body"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { rows: "10", required: "" },
+                        domProps: { value: _vm.body },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.body = $event.target.value
+                          }
                         }
-                        _vm.body = $event.target.value
-                      }
-                    }
-                  })
-                ]),
+                      })
+                    ])
+                  ],
+                  1
+                ),
                 _vm._v(" "),
                 _c(
                   "button",

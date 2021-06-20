@@ -76,7 +76,7 @@ export default {
 
     mixins: [modification],
 
-    components: { Vote, UserInfo, MEditor, MEditor },
+    components: { Vote, UserInfo, MEditor },
 
     data() {
         return{
