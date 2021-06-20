@@ -48,11 +48,11 @@ a:hover{
 }
 
 .card{
-    background-color: #323567;
+    background-color: #26284a;
 }
 
 label .card-header, .card-body, #app{
-    background-color: #232546;
+    // background-color: #232546;
     color: #c0cad4;
 }
 .card-header{
@@ -149,4 +149,12 @@ form.form-delete{
 
 [v-cloak] {
     display: none;
+}
+
+.nav-tabs .nav-link.active{
+    color: #ffffff;
+    border-color: #232546;
+}
+.card-header {
+    background-color: #282b56;
 }

@@ -73,7 +73,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #232546;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -511,7 +511,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #232546;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4257,15 +4257,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #232546, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #232546, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #232546, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4468,8 +4468,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #232546;
+  border-color: #dee2e6 #dee2e6 #232546;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10962,13 +10962,12 @@ a:hover {
 }
 
 .card {
-  background-color: #323567;
+  background-color: #26284a;
 }
 
 label .card-header,
 .card-body,
 #app {
-  background-color: #232546;
   color: #c0cad4;
 }
 
@@ -11067,6 +11066,15 @@ form.form-delete {
 
 [v-cloak] {
   display: none;
+}
+
+.nav-tabs .nav-link.active {
+  color: #ffffff;
+  border-color: #232546;
+}
+
+.card-header {
+  background-color: #282b56;
 }
 
 
