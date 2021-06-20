@@ -10006,8 +10006,12 @@ h3 {
   background-color: #ffffff !important;
 }
 
-h2, h3, a, p, pre {
+h2, h3, a, p {
   color: #ffffff;
+}
+
+pre {
+  color: #ffed4a;
 }
 
 a:hover {

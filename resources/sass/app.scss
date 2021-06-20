@@ -35,9 +35,12 @@
 .navbar{
     background-color: #ffffff !important;
 }
-h2,h3,a,p,pre{
+h2,h3,a,p{
     color: #ffffff;
 }
+ pre{
+     color: $yellow;
+ }
 
 a:hover{
     text-decoration: none;
