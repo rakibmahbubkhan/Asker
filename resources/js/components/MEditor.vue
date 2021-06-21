@@ -2,17 +2,21 @@
     <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#write">Write</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#preview">Preview</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#write"
+                        >Write</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#preview"
+                        >Preview</a
+                    >
+                </li>
             </ul>
         </div>
         <div class="card-body tab-content">
             <div class="tab-pane active" id="write">
-            <slot></slot>
+                <slot></slot>
             </div>
             <div class="tab-pane" v-html="preview" id="preview"></div>
         </div>
@@ -20,24 +24,29 @@
 </template>
 
 <script>
-import MarkdownIt from 'markdown-it';
-import autosize from 'autosize';
+import MarkdownIt from "markdown-it";
+import prism from "markdown-it-prism";
+import autosize from "autosize";
+
+import "prismjs/themes/prism.css";
 
 const md = new MarkdownIt();
+md.use(prism);
+
 export default {
-    props: ['body'],
+    props: ["body"],
     computed: {
-        preview (){
+        preview() {
             return md.render(this.body);
         }
     },
 
     mounted() {
-        autosize(this.$el.querySelector('textarea'))
+        autosize(this.$el.querySelector("textarea"));
     },
 
-    updated(){
-        autosize(this.$el.querySelector('textarea'))
+    updated() {
+        autosize(this.$el.querySelector("textarea"));
     }
-}
+};
 </script>

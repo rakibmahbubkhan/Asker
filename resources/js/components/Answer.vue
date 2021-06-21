@@ -8,7 +8,7 @@
             <form v-if="editing" @submit.prevent="update">
                 <div class="form-group">
                 <m-editor :body="body">
-                <textarea rows="10" v-model="body" class="form-control" required></textarea>
+                    <textarea rows="10" v-model="body" class="form-control" required></textarea>
                 </m-editor>
                 </div>
                 <button class="btn btn-primary" :disabled="isInvalid">Update</button>
