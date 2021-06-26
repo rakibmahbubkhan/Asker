@@ -38,9 +38,6 @@
 h2,h3,a,p{
     color: #ffffff;
 }
-pre{
-    color: $yellow;
-}
 
 a:hover{
     text-decoration: none;
@@ -55,7 +52,6 @@ a:hover{
 }
 
 label .card-header, .card-body, #app{
-    // background-color: #232546;
     color: #c0cad4;
 }
 .card-header{
