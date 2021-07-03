@@ -58478,7 +58478,10 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "media mt-2" }, [
       _c("a", { staticClass: "pr-2", attrs: { href: _vm.user.url } }, [
-        _c("img", { attrs: { src: _vm.user.avater, alt: "" } })
+        _c("img", {
+          staticClass: "rounded-circle",
+          attrs: { src: _vm.user.avater, alt: "" }
+        })
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "media-body mt-1" }, [

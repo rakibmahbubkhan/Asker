@@ -63,10 +63,13 @@ class User extends Authenticatable
 
     public function getAvaterAttribute()
     {
-        $email = $this->email;
+        $name = $this->name;
         $size = 32;
+        $background='0f74b4';
+        $color='e3ffff';
 
-        return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?s=" . $size;
+
+        return "https://ui-avatars.com/api/?name=".$name."&"."size=".$size."&"."background=".$background."&"."color=".$color;
     }
 
     public function favourites()
